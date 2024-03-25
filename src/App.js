@@ -13,7 +13,10 @@ import Student_signin from "./pages/forms/Student/Student_signin";
 import ResetPassword from "./pages/forms/ResetPassword/ResetPassword"
 import Footer from "./components/footer/Footer";
 import HeroSection from "./pages/home/HeroSection/HeroSection";
-import StudentHeader from "./pages/forms/Student/StudentHome/StudentHeader/StudentHeader";
+//Student
+import StudentHome from "./pages/forms/Student/StudentHome/StudentHome";
+
+
 
 ////////////////
 // Material UI imports
@@ -29,23 +32,28 @@ import { useState } from "react"
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   <HeroSection/>
+  
   return (
     
-   
+
     <BrowserRouter >
-      <Header />
-      
+     
 
 <Routes>
   <Route path="/" element={<Home />} />
   <Route path="/Student_signin" element={<Student_signin />} />
-  <Route path="/Student_signin" element={<Student_signup />} />
+  <Route path="/Student_signup" element={<Student_signup />} />
   <Route path="/Student" element={<Student />} />
   <Route path="/Company" element={<Company />} />
   <Route path="/CompanySignin" element={<CompanySignin />} />
   <Route path="/ CompanySignup" element={<CompanySignup />} />
 <Route path="/ResetPassword" element={<ResetPassword/>} />
-<Route path="/StudentHeader" element={<StudentHeader/>} />
+<Route path="/StudentHome" element={<StudentHome/>} />
+
+
+
+
+
 
   
 

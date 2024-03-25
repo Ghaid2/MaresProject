@@ -1,188 +1,111 @@
+import './Student.css';
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Header from '../../../components/header/header';
 
-import React, { Component } from 'react';
-import "./Student.css";
 
-class Student_signin extends Component{
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-      confirmPassword: '',
-      UniversityName:'',
-      CollegeName:'',
-      Major:'',
-      DateofBirth:'', 
-      PhoneNumber:'',
-      location:''
-    };
-  }
-
-  handleInputChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  }
-
-  handleSubmit = (event) => {
+export default function Signin() {
+ 
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const { email, password, confirmPassword, UniversityName ,CollegeName,Major
-    ,DateofBirth,PhoneNumber,location } = this.state;
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
 
-    // You can perform signup logic here, such as sending the data to a server
+    });
+
+
+  };
+
+  return (
+    <div>
    
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Confirm Password:', confirmPassword);
-    console.log('UniversityName', UniversityName );
-    console.log('CollegeName', CollegeName );
-    console.log('DateofBirth', DateofBirth );
-    console.log('PhoneNumber', PhoneNumber );
-    console.log('location', location );
+   <Header/>
+<Container component="main" maxWidth="xs">
 
-
-
-    // Optionally, you can reset the form after submission
-    this.setState({ username: '', email: '', password: '', confirmPassword: '', UniversityName:''
-    , CollegeName:'',Major:'', DateofBirth:'', PhoneNumber:'',location:'' });
-  }
-
-  render() {
-    const { email, password, confirmPassword } = this.state;
-    return (
-      <section className="form-container">
-        <h1 className="form-title"> إنشاء حساب جديد</h1>
-        <form className="form">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            fontFamily: 'Tajawal, sans-serif', 
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'mediumaquamarine;' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+           <span>تسجيل الدخول</span> 
+          </Typography>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+             
+             
+              <Grid item xs={12}>
+                <TextField
+                              required
+                              fullWidth
+                              id="email"
+                              label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>الإيميل الإلكتروني </span>}
+                              name="email"
+                              autoComplete="email"
+                              type="email"
+             
+           
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>كلمة المرور </span>}
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                />
+              </Grid>
+       
             
-          <div className="form-group">
-            <label htmlFor="email" className="form-label">
-            البريد الإلكتروني:
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="ادخل البريد الإلكتروني"
-              className="form-input"
-              required
-            />
-          </div>
+            </Grid>
+            <Button
+        
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+              style={{ backgroundColor: 'mediumaquamarine', color: 'black' }}
+            >
+            <span> تسجيل الدخول</span> 
+            </Button  >
+            <Grid container justifyContent="flex-end"  >
+              <Grid item >
+              <span >ليس لديك حساب في مارس؟ <a href="/Student_signup">إنشاء حساب</a></span>  
+              <br></br>              
+              <span>نسيت كلمة المرور؟ <a href="/ResetPassword"> إعادة تعيين </a></span>
 
-          <div className="form-group">
-            <label htmlFor="password" className="form-label">
-            كلمة المرور:
-            </label>
-            <input
-              type="password"
-              id="password"
-              placeholder="********"
-              className="form-input"
-              required
-            />
-          </div>
+             </Grid>
+            </Grid>
+          </Box>
+        </Box>
+     
+      </Container>
 
-          <div className="form-group">
-            <label htmlFor="confirmPassword" className="form-label">
-            تأكيد كلمة المرور:
-            </label>
-            <input
-              type="Password"
-              id="confirmPassword"
-              placeholder="********"
-              className="form-input"
-              required
-            />
-          </div>
-
-          <h3>المعلومات الاداريه</h3>
-          <div className="form-group">
-            <label htmlFor="UniversityName" className="form-label">
-            اسم الجامعة:
-            </label>
-            <input
-              type="teat"
-              id="UniversityName"
-              placeholder="ادخل اسم الجامعة"
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="CollegeName" className="form-label">
-            اسم الكلية:
-            </label>
-            <input
-              type="teat"
-              id="College Name"
-              placeholder="ادخل اسم الكلية"
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="Major" className="form-label">
-            التخصص:
-            </label>
-            <input
-              type="teat"
-              id="Major"
-              placeholder="ادخل التخصص"
-              className="form-input"
-            />
-          </div>
-
-
-          <h3>المعلومات الشخصية</h3>
-          <div className="form-group">
-            <label htmlFor="DateofBirth" className="form-label">
-           تاريخ الميلاد:
-            </label>
-            <input
-              type="Date"
-              id="DateofBirth"
-              placeholder="تاريخ الميلاد"
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="PhoneNumber" className="form-label">
-            رقم الهاتف:
-            </label>
-            <input
-              type="tel"
-              id="PhoneNumber"
-              placeholder="+٩٦٦٥*********"
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="location" className="form-label">
-            مكان الاقامة:
-            </label>
-            <input
-              type="teat"
-              id="location"
-              placeholder="المدينة -الحي -الشارع "
-              className="form-input"
-            />
-          </div>
-
-
-
-
-
-          <button type="submit" className="form-btn">
-          إنشاء حساب
-          </button>
-        </form>
-        <div className="form-footer">
-        <p> لديك حساب في مارس؟ <a href="/Student">تسجيل الدخول </a></p>
-        </div>
-      </section>
-    );
-  }
+    </div>
+ 
+   
+  );
 }
-
-
-export default Student_signin;
