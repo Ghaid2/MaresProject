@@ -5,7 +5,7 @@ import S_HeroSection from './S_HeroSection/S_HeroSection';
 import Sidebar from './Sidebar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Test from "./Test";
+
 
 
 const StudentHome = () => {
@@ -16,7 +16,7 @@ const StudentHome = () => {
         <StudentHeader />
         < S_HeroSection />
         <Sidebar/>
-        <Test />
+   
 
 
         

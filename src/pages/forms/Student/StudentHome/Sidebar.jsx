@@ -19,7 +19,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import Profile from '../StudentProfile/Profile';
+
 
 const drawerWidth = 240;
 
@@ -50,6 +50,11 @@ function ResponsiveDrawer(props) {
 
 
   }
+  const ClickHandleResume = () =>{
+    Navigate('../Resume')
+
+
+  }
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
@@ -73,17 +78,18 @@ function ResponsiveDrawer(props) {
             </ListItemIcon>
             <ListItemText  primary="المعلومات الشخصية" />
           </ListItemButton>
-         
-
         </ListItem>
+
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={ClickHandleResume}>
             <ListItemIcon>
               <DescriptionIcon />
             </ListItemIcon>
             <ListItemText primary="السيرة الذاتية" />
           </ListItemButton>
         </ListItem>
+
+
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>

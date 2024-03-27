@@ -1,238 +1,113 @@
-import React, { Component } from 'react';
-import "./Company.css";
 
-class CompanySignin extends Component{
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Header from '../../../components/header/header';
 
-  constructor(props) {
-    super(props);
-    this.state = {
 
-      CompanyName:'',
-      email: '',
-      password: '',
-      confirmPassword: '',
 
-      Companylocation:'',
-      CompanySector:'',
-      CompanyMajor:'', 
-      CommercialRegistrationNumber:'',
-
-      FirstNameOfTheOfficial:'',
-      LastNameOfTheOfficial:'',
-      JobTitle :'',
-      PhoneNumber:'',
-
-      
-    };
-  }
-
-  handleInputChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  }
-
-  handleSubmit = (event) => {
+export default function Signin() {
+ 
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const {CompanyName ,email, password, confirmPassword, Companylocation ,CompanySector,CompanyMajor
-    ,CommercialRegistrationNumber,FirstNameOfTheOfficial,LastNameOfTheOfficial, JobTitle ,PhoneNumber} = this.state;
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
 
-    // You can perform signup logic here, such as sending the data to a server
-    console.log('CompanyName:', CompanyName);
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Confirm Password:', confirmPassword);
-
-    console.log('Companylocation', Companylocation );
-    console.log('CompanySector', CompanySector );
-    console.log('CompanyMajor', CompanyMajor );
-    console.log('CommercialRegistrationNumber', CommercialRegistrationNumber );
-
-    console.log('FirstNameOfTheOfficial', FirstNameOfTheOfficial );
-    console.log('LastNameOfTheOfficial', LastNameOfTheOfficial );
-    console.log('JobTitle', JobTitle );
-    console.log('PhoneNumber', PhoneNumber );
+    });
 
 
-    // Optionally, you can reset the form after submission
-    this.setState({ CompanyName: '', email: '', password: '', confirmPassword: '', Companylocation: ''
-    , CompanySector:'',CompanyMajor:'', CommercialRegistrationNumber:'', FirstNameOfTheOfficial:'',
-    LastNameOfTheOfficial:'' ,JobTitle: '' ,PhoneNumber:' '});
-  }
+  };
 
-  render() {
-    const { email, password, confirmPassword } = this.state;
-    return (
-      <section className="form-container">
-        <h1 className="form-title"> إنشاء حساب جديد</h1>
-        <form className="form">
+  return (
+    <div>
+   
+   <Header/>
+<Container component="main" maxWidth="xs">
 
-        <div className="form-group">
-            <label htmlFor="CompanyName" className="form-label">
-            اسم الشركة:
-            </label>
-            <input
-              type="teat"
-              id="CompanyName"
-              placeholder="ادخل اسم الشركة"
-              className="form-input"
-            />
-          </div>
-
-
-          <div className="form-group">
-            <label htmlFor="email" className="form-label">
-            البريد الإلكتروني:
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="ادخل البريد الإلكتروني"
-              className="form-input"
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="password" className="form-label">
-            كلمة المرور:
-            </label>
-            <input
-              type="password"
-              id="password"
-              placeholder="********"
-              className="form-input"
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="confirmPassword" className="form-label">
-            تأكيد كلمة المرور:
-            </label>
-            <input
-              type="Password"
-              id="confirmPassword"
-              placeholder="********"
-              className="form-input"
-              required
-            />
-          </div>
-
-          <h3>معلومات عن الشركة</h3>
-
-         < div className="form-group">
-            <label htmlFor="Companylocation" className="form-label">
-           موقع الشركة:
-            </label>
-            <input
-              type="teat"
-              id="Companylocation"
-              placeholder="المدينة -الحي -الشارع "
-              className="form-input"
-            />
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="CompanySector" className="form-label">
-             قطاع الشركة:
-            </label>
-            <input
-              type="teat"
-              id="CompanySector"
-              placeholder="ادخل قطاع الشركة"
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="CompanyMajor" className="form-label">
-            مجال الشركة :
-            </label>
-            <input
-              type="teat"
-              id="CompanyMajor"
-              placeholder="ادخل مجال الشركة"
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="CommercialRegistrationNumber" className="form-label">
-            رقم السجل التجاري:
-            </label>
-            <input
-              type="teat"
-              id="CommercialRegistrationNumber"
-              placeholder="ادخل رقم السجل التجاري"
-              className="form-input"
-            />
-          </div>
-
-
-          <h3>معلومات عن المسؤول</h3>
-
-          <div className="form-group">
-            <label htmlFor="FirstNameOfTheOfficial" className="form-label">
-            الاسم الأول للمسؤول:
-            </label>
-            <input
-              type="teat"
-              id="FirstNameOfTheOfficial"
-              placeholder="ادخل الاسم الأول للمسؤول"
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="LastNameOfTheOfficial" className="form-label">
-            الاسم الأخير للمسؤول:
-            </label>
-            <input
-              type="teat"
-              id="LastNameOfTheOfficial"
-              placeholder="ادخل الاسم الأخير للمسؤول"
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="JobTitle" className="form-label">
-            المسمى الوظيفي:
-            </label>
-            <input
-              type="teat"
-              id="JobTitle"
-              placeholder="ادخل  المسمى الوظيفي"
-              className="form-input"
-            />
-          </div>
-
-
-          <div className="form-group">
-            <label htmlFor="PhoneNumber" className="form-label">
-            رقم الهاتف:
-            </label>
-            <input
-              type="tel"
-              id="PhoneNumber"
-              placeholder="+٩٦٦٥*********"
-              className="form-input"
-            />
-          </div>
-
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            fontFamily: 'Tajawal, sans-serif', 
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'mediumaquamarine;' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+           <span>تسجيل الدخول</span> 
+          </Typography>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+             
+             
+              <Grid item xs={12}>
+                <TextField
+                              required
+                              fullWidth
+                              id="email"
+                              label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>الإيميل الإلكتروني </span>}
+                              name="email"
+                              autoComplete="email"
+                              type="email"
+             
+           
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>كلمة المرور </span>}
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                />
+              </Grid>
+       
+            
+            </Grid>
+            <Button
         
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+              style={{ backgroundColor: 'mediumaquamarine', color: 'black' }}
+            >
+            <span> تسجيل الدخول</span> 
+            </Button  >
+            <Grid container justifyContent="flex-end"  >
+              <Grid item >
+              <span >ليس لديك حساب في مارس؟ <a href="/CompanySignup">إنشاء حساب</a></span>  
+              <br></br>              
+              <span>نسيت كلمة المرور؟ <a href="/ResetPassword"> إعادة تعيين </a></span>
 
-          <button type="submit" className="form-btn">
-          إنشاء حساب
-          </button>
-        </form>
-        <div className="form-footer">
-       لدي حساب في مارس <a href="/Company">تسجيل الدخول</a>
-        </div>
-      </section>
-    );
-  }
+             </Grid>
+            </Grid>
+          </Box>
+        </Box>
+        <br></br>
+     <br></br>
+     <br></br>
+      </Container>
+
+    </div>
+ 
+   
+  );
 }
-
-
-export default CompanySignin;

@@ -44,7 +44,7 @@ const Test = () => {
                 margin="normal"
                 required
                 name="firstName"
-                label="الاسم الأول"
+                label= {<span style={{ fontFamily: 'Tajawal, sans-serif'}}> الإسم الأول </span>}
                 value={formData.firstName}
                 onChange={handleChange}
                 InputProps={{
@@ -59,7 +59,7 @@ const Test = () => {
                 margin="normal"
                 required
                 name="lastName"
-                label="الاسم الأخير"
+                label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}> الإسم الأخير </span>}
                 value={formData.lastName}
                 onChange={handleChange}
                 InputProps={{
@@ -72,7 +72,7 @@ const Test = () => {
             <TextField
                 margin="normal"
                 name="phone"
-                label="رقم الهاتف"
+                label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>رقم الهاتف  </span>}
                 value={formData.phone}
                 onChange={handleChange}
                 InputProps={{
@@ -85,7 +85,7 @@ const Test = () => {
             <TextField
                 margin="normal"
                 name="dob"
-                label="تاريخ الميلاد"
+                label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>تاريخ الميلاد  </span>}
                 type="date"
                 value={formData.dob}
                 onChange={handleChange}
@@ -99,7 +99,7 @@ const Test = () => {
             <TextField
                 margin="normal"
                 name="city"
-                label="المدينة"
+                label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}> المدينة </span>}
                 value={formData.city}
                 onChange={handleChange}
                 InputProps={{

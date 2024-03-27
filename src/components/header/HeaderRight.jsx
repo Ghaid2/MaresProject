@@ -7,7 +7,7 @@ const HeaderRight = () => {
       <i className="bi bi-person"></i>
         <span>الطلاب</span>
       </Link>
-      <Link to="Company" className="header-right-link">
+      <Link to="/CompanySignup" className="header-right-link">
       <i className="bi bi-building"></i>
         <span>الشركات</span>
         
