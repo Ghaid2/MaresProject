@@ -1,4 +1,4 @@
-.home-hearo-header {
+.hearo-header {
    background: url(./background.png);
    background-size: cover;
    background-repeat: no-repeat;
@@ -8,7 +8,7 @@
    margin-bottom: 40px;
  }
 
-.home-hero-header-layout {
+.hero-header-layout {
   position: absolute;
   top: 50%;
   right: 0;
@@ -16,7 +16,7 @@
   text-align: right;
 }
 
-.home-title {
+.title {
   font-size: 40px;
   padding: 10px 17px;
   color: rgb(7, 7, 7);
