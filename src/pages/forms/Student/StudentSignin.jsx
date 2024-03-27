@@ -1,4 +1,5 @@
 import './Student.css';
+
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -14,7 +15,7 @@ import Header from '../../../components/header/header';
 
 
 
-export default function SignUp() {
+export default function Signin() {
  
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,7 +23,6 @@ export default function SignUp() {
     console.log({
       email: data.get('email'),
       password: data.get('password'),
-      confirmpassword: data.get('confirmpassword'),
 
     });
 
@@ -30,9 +30,13 @@ export default function SignUp() {
   };
 
   return (
-    <div>
-       <Header/>
-       <Container component="main" maxWidth="xs">
+    <>
+     <Header/>
+    <div style={{backgroundColor:'#efefef'}}  >
+   
+   
+<Container component="main" maxWidth="xs">
+
         <CssBaseline />
         <Box
           sx={{
@@ -47,31 +51,12 @@ export default function SignUp() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-           <span>تسجيل جديد</span> 
+           <span>تسجيل الدخول</span> 
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>الإسم الأول</span>}
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>الإسم الأخير</span>}
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
+             
+             
               <Grid item xs={12}>
                 <TextField
                               required
@@ -96,16 +81,7 @@ export default function SignUp() {
                   autoComplete="new-password"
                 />
               </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="confirmpassword"
-                  label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}> تأكيد كلمة المرور</span>}
-                  type="password"
-                  id="confirmpassword"
-                />
-              </Grid>
+       
             
             </Grid>
             <Button
@@ -116,21 +92,27 @@ export default function SignUp() {
               sx={{ mt: 3, mb: 2 }}
               style={{ backgroundColor: 'mediumaquamarine', color: 'black' }}
             >
-            <span>إنشاء حساب</span> 
+            <span> تسجيل الدخول</span> 
             </Button  >
             <Grid container justifyContent="flex-end"  >
               <Grid item >
-              <span >
-  لديك حساب في مارس؟ <a href="/Student_signin">تسجيل الدخول</a>
-</span>                
-              </Grid>
+              <span >ليس لديك حساب في مارس؟ <a href="/StudentSignup">إنشاء حساب</a></span>  
+              <br></br>              
+              <span>نسيت كلمة المرور؟ <a href="/ResetPassword"> إعادة تعيين </a></span>
+
+             </Grid>
             </Grid>
           </Box>
         </Box>
+        <br></br>
+        <br></br>
+        <br></br>
      
       </Container>
+
     </div>
-     
+    </>
+ 
    
   );
 }

@@ -1,10 +1,11 @@
 body {
     direction: rtl;
-    background-color: var(main-color);
+    background-color: #efefef !important;
+    
     
 }
 
 *{
-    
+
     font-family: "Tajawal", sans-serif;
 }

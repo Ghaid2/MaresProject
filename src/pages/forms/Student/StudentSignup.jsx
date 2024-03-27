@@ -14,7 +14,7 @@ import Header from '../../../components/header/header';
 
 
 
-export default function Signin() {
+export default function SignUp() {
  
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,6 +22,7 @@ export default function Signin() {
     console.log({
       email: data.get('email'),
       password: data.get('password'),
+      confirmpassword: data.get('confirmpassword'),
 
     });
 
@@ -30,10 +31,8 @@ export default function Signin() {
 
   return (
     <div>
-   
-   <Header/>
-<Container component="main" maxWidth="xs">
-
+       <Header/>
+       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
@@ -48,12 +47,31 @@ export default function Signin() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-           <span>تسجيل الدخول</span> 
+           <span>تسجيل جديد</span> 
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-             
-             
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  autoComplete="given-name"
+                  name="firstName"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>الإسم الأول</span>}
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  id="lastName"
+                  label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>الإسم الأخير</span>}
+                  name="lastName"
+                  autoComplete="family-name"
+                />
+              </Grid>
               <Grid item xs={12}>
                 <TextField
                               required
@@ -78,7 +96,16 @@ export default function Signin() {
                   autoComplete="new-password"
                 />
               </Grid>
-       
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="confirmpassword"
+                  label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}> تأكيد كلمة المرور</span>}
+                  type="password"
+                  id="confirmpassword"
+                />
+              </Grid>
             
             </Grid>
             <Button
@@ -89,23 +116,25 @@ export default function Signin() {
               sx={{ mt: 3, mb: 2 }}
               style={{ backgroundColor: 'mediumaquamarine', color: 'black' }}
             >
-            <span> تسجيل الدخول</span> 
+            <span>إنشاء حساب</span> 
             </Button  >
             <Grid container justifyContent="flex-end"  >
               <Grid item >
-              <span >ليس لديك حساب في مارس؟ <a href="/Student_signup">إنشاء حساب</a></span>  
-              <br></br>              
-              <span>نسيت كلمة المرور؟ <a href="/ResetPassword"> إعادة تعيين </a></span>
-
-             </Grid>
+              <span >
+  لديك حساب في مارس؟ <a href="/StudentSignin">تسجيل الدخول</a>
+</span>                
+              </Grid>
             </Grid>
           </Box>
         </Box>
      
       </Container>
-
+      <br></br>
+        <br></br>
+        <br></br>
+     
     </div>
- 
+     
    
   );
 }

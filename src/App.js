@@ -1,21 +1,23 @@
 
-
+import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/header/header";
 import Home from "./pages/home/Home";
+
 
 import Student from "./pages/forms/Student/Student";
 import Company from "./pages/forms/Company/Company";
 import CompanySignin from "./pages/forms/Company/CompanySignin";
 import CompanySignup from "./pages/forms/Company/CompanySignup";
-import Student_signup from "./pages/forms/Student/Student_signup";
-import Student_signin from "./pages/forms/Student/Student_signin";
+import StudentSignup from "./pages/forms/Student/StudentSignup";
+import StudentSignin from "./pages/forms/Student/StudentSignin";
 import ResetPassword from "./pages/forms/ResetPassword/ResetPassword"
 import Footer from "./components/footer/Footer";
 import HeroSection from "./pages/home/HeroSection/HeroSection";
 //Student
 import StudentHome from "./pages/forms/Student/StudentHome/StudentHome";
-
+import Test from "./pages/forms/Student/StudentHome/Test";
+import Profile from "./pages/forms/Student/StudentProfile/Profile";
 
 
 ////////////////
@@ -41,14 +43,17 @@ function App() {
 
 <Routes>
   <Route path="/" element={<Home />} />
-  <Route path="/Student_signin" element={<Student_signin />} />
-  <Route path="/Student_signup" element={<Student_signup />} />
+  <Route path="/StudentSignin" element={<StudentSignin />} />
+  <Route path="/StudentSignup" element={<StudentSignup />} />
   <Route path="/Student" element={<Student />} />
   <Route path="/Company" element={<Company />} />
   <Route path="/CompanySignin" element={<CompanySignin />} />
   <Route path="/ CompanySignup" element={<CompanySignup />} />
 <Route path="/ResetPassword" element={<ResetPassword/>} />
 <Route path="/StudentHome" element={<StudentHome/>} />
+<Route path="/Test" element={<Test/>} />
+<Route path="/Profile" element={<Profile/>} />
+
 
 
 

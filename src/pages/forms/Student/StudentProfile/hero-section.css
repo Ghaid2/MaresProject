@@ -1,13 +1,12 @@
 .home-hearo-header {
-  background: url(./heroImg.jpg);
-  
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 400px;
-  width: 100%;
-  position: relative;
-  margin-bottom: 40px;
-}
+   background: url(./background.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 150px;
+   width: 100%;
+   position: relative;
+   margin-bottom: 40px;
+ }
 
 .home-hero-header-layout {
   position: absolute;

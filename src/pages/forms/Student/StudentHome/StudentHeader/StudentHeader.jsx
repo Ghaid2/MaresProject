@@ -10,8 +10,9 @@ const StudentHeader = () => {
   return (
  <div className="header">
  < S_HeaderLeft />
+ < S_Navbar/>
   < S_HeaderRight/>
-  < S_Navbar/>
+
  </div>
   );
 };

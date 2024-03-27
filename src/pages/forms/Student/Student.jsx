@@ -1,5 +1,5 @@
-import Student_signin from "./Student_signin";
-import Student_signup from "./Student_signup";
+import StudentSignin from "./StudentSignin";
+import StudentSignup from "./StudentSignup";
 import Header from "../../../components/header/header";
 
 import Chip from "@mui/material/Chip";
