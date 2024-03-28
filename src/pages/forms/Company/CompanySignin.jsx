@@ -14,19 +14,53 @@ import Header from '../../../components/header/header';
 
 
 
-export default function Signin() {
- 
-  const handleSubmit = (event) => {
+
+
+export default function CompanySignin() {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+    try {
+      const cred = new FormData(event.currentTarget);
+      console.log({
+        email: cred.get('email'),
+        password: cred.get('password'),
+        
+      });
 
-    });
+      const response = await fetch("http://localhost:5000/Company/signinCompany", {
 
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify({
+          email: cred.get('email'),
+          password: cred.get('password'),
+        }),
+
+      });
+    const data = await response.json(); 
+
+    // if (!response.ok) {
+    
+    //   console.log(data);
+    //   throw new Error(`Network response was not ok: ${response.statusText}`);
+    // }
+
+    console.log(data); 
+
+    // Store token in localStorage
+    localStorage.setItem("user_token", data.token);
+    console.log("The token is " + localStorage.getItem("user_token"));
+
+  } catch (error) {
+    console.error('Error during fetch:', error);
+  }
 
   };
+
 
   return (
     <div>
