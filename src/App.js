@@ -18,7 +18,7 @@ import HeroSection from "./pages/home/HeroSection/HeroSection";
 import StudentHome from "./pages/forms/Student/StudentHome/StudentHome";
 import Test from "./pages/forms/Student/StudentHome/Test";
 import Profile from "./pages/forms/Student/StudentProfile/Profile";
-
+import Resume from "./pages/forms/Student/StudentProfile/Resume";
 
 ////////////////
 // Material UI imports
@@ -53,6 +53,7 @@ function App() {
 <Route path="/StudentHome" element={<StudentHome/>} />
 <Route path="/Test" element={<Test/>} />
 <Route path="/Profile" element={<Profile/>} />
+<Route path="/Resume" element={<Resume/>} />
 
 
 
