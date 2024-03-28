@@ -1,5 +1,4 @@
 import './Student.css';
-
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -15,7 +14,8 @@ import Header from '../../../components/header/header';
 
 
 
-export default function Signin() {
+
+export default function StudentSignin() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,6 +24,7 @@ export default function Signin() {
       console.log({
         email: cred.get('email'),
         password: cred.get('password'),
+        
       });
 
       const response = await fetch("http://localhost:5000/user/signin", {
@@ -59,6 +60,7 @@ export default function Signin() {
 
   };
 
+  
   return (
     <>
      <Header/>

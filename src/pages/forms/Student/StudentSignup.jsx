@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './Student.css';
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
@@ -14,18 +15,53 @@ import Header from '../../../components/header/header';
 
 
 
-export default function SignUp() {
- 
-  const handleSubmit = (event) => {
+export default function StudentSignup() {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-      confirmpassword: data.get('confirmpassword'),
+    try {
+      const cred = new FormData(event.currentTarget);
+      console.log({
+        firstname: cred.get('firstname'),
+        lastname: cred.get('lastname'),
+        email: cred.get('email'),
+        password: cred.get('password'),
+        confirmpassword: cred.get('confirmpassword'),
+      });
 
-    });
+      const response = await fetch("http://localhost:5000/user/signup", {
 
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify({
+          firstname: cred.get('firstname'),
+          lastname: cred.get('lastname'),
+          email: cred.get('email'),
+          password: cred.get('password'),
+          confirmpassword: cred.get('confirmpassword'),
+
+        }),
+
+      });
+    const data = await response.json(); 
+
+    // if (!response.ok) {
+    
+    //   console.log(data);
+    //   throw new Error(`Network response was not ok: ${response.statusText}`);
+    // }
+    console.log(data); 
+
+    // Store token in localStorage
+    localStorage.setItem("user_token", data.token);
+    console.log("The token is " + localStorage.getItem("user_token"));
+
+  } catch (error) {
+    console.error('Error during fetch:', error);
+  }
 
   };
 
