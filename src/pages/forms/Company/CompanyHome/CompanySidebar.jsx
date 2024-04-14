@@ -5,23 +5,22 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
+
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
+
 import Typography from '@mui/material/Typography';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DescriptionIcon from '@mui/icons-material/Description';
 import SchoolIcon from '@mui/icons-material/School'; 
 import ListItemIcon from '@mui/material/ListItemIcon';
-import { Link } from "react-router-dom";
+
 import { useNavigate } from 'react-router-dom';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -63,7 +62,7 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List sx={{ textAlign: 'center' }}>
         <Typography textAlign='center' variant="h6" noWrap sx={{ mt: 2, fontFamily: 'Tajawal, sans-serif' }}>
-          الملف الشخصي
+           ملف الشركة
         </Typography>
 
         <ListItem disablePadding>
@@ -71,7 +70,7 @@ function ResponsiveDrawer(props) {
             <ListItemIcon>
               <VisibilityIcon />
             </ListItemIcon>
-            <ListItemText sx={{ textAlign:"start" }} primary="مشاهدة الملف الشخصي"      />
+            <ListItemText sx={{ textAlign:"start" }} primary="مشاهدة ملف الشركة"      />
           </ListItemButton>
         </ListItem>
 
@@ -80,7 +79,7 @@ function ResponsiveDrawer(props) {
             <ListItemIcon>
               <AccountCircleIcon />
             </ListItemIcon>
-            <ListItemText sx={{ textAlign:"start" }} primary="المعلومات الشخصية" />
+            <ListItemText sx={{ textAlign:"start" }} primary="معلومات الشركة" />
           </ListItemButton>
         </ListItem>
 
@@ -90,7 +89,7 @@ function ResponsiveDrawer(props) {
             <ListItemIcon>
               <DescriptionIcon />
             </ListItemIcon>
-            <ListItemText sx={{ textAlign:"start" }} primary="السيرة الذاتية" />
+            <ListItemText sx={{ textAlign:"start" }} primary="إدارة الطلبات" />
           </ListItemButton>
         </ListItem>
 
@@ -99,7 +98,7 @@ function ResponsiveDrawer(props) {
             <ListItemIcon>
               <SchoolIcon />
             </ListItemIcon>
-            <ListItemText sx={{ textAlign:"start" }} primary="الطلبات المقدمة" />
+            <ListItemText sx={{ textAlign:"start" }} primary="إنشاء فرص التدريب" />
           </ListItemButton>
         </ListItem>
 
@@ -108,16 +107,36 @@ function ResponsiveDrawer(props) {
             <ListItemIcon>
               <HelpOutlineIcon />
             </ListItemIcon>
-            <ListItemText sx={{ textAlign:"start" }} primary="مساعدك الشخصي" />
+            <ListItemText sx={{ textAlign:"start" }} primary="إدارة الفرص" />
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <DescriptionOutlinedIcon />
+            <DescriptionIcon />
             </ListItemIcon>
-            <ListItemText  sx={{ textAlign:"start" }} primary="التدريب الالكتروني" />
+            <ListItemText  sx={{ textAlign:"start" }} primary="الفرص المنشورة" />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+            <DescriptionIcon />
+
+            </ListItemIcon>
+            <ListItemText  sx={{ textAlign:"start" }} primary="الفرص المنجزة" />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+            <DescriptionIcon />
+
+            </ListItemIcon>
+            <ListItemText  sx={{ textAlign:"start" }} primary="الفرص الغير متاحة" />
           </ListItemButton>
         </ListItem>
 
@@ -158,7 +177,6 @@ function ResponsiveDrawer(props) {
               boxSizing: 'border-box', 
               width: drawerWidth,
               backgroundColor: '#efefef', // تغيير لون الشريط هنا
-              fontFamily: 'Tajawal, sans-serif', 
             },
           }}
           open
@@ -175,4 +193,3 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
-

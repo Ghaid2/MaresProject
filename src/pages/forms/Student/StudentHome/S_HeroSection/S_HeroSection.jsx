@@ -8,8 +8,11 @@ const S_HeroSection = () => {
         
       
        
-          <h1 className="home-title">   اكتشف عالم الفرص مع <span style={{ color: 'mediumaquamarine' }}>مارِس</span> </h1>
-<h2> مكانك لبناء مستقبلك وتحقيق أحلامك</h2>
+          <h1 className="Shome-title">   اكتشف عالم الفرص مع <span style={{ color: 'mediumaquamarine' }}>مارِس</span> 
+         
+         
+          </h1>
+          <h2 class="Secound-Shome-title"> مكانك لبناء مستقبلك وتحقيق أحلامك</h2>
 
 
 

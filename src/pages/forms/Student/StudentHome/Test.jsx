@@ -39,12 +39,12 @@ const Test = () => {
 
     return (
         <Grid container direction="column" justifyContent="flex-start" alignItems="center" style={{ height: '100vh' }}>
-            <h2 style={{ fontFamily: 'Tajawal, sans-serif' }}>المعلومات الشخصية</h2>
+            <h3 style={{ fontFamily: 'Tajawal, sans-serif' }}>المعلومات الشخصية</h3>
             <TextField
                 margin="normal"
                 required
                 name="firstName"
-                label= {<span style={{ fontFamily: 'Tajawal, sans-serif'}}> الإسم الأول </span>}
+                label= {<span style={{ fontFamily: 'Tajawal, sans-serif',fontWeight: 'bold'}}> الإسم الأول </span>}
                 value={formData.firstName}
                 onChange={handleChange}
                 InputProps={{
@@ -59,7 +59,7 @@ const Test = () => {
                 margin="normal"
                 required
                 name="lastName"
-                label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}> الإسم الأخير </span>}
+                label={<span style={{ fontFamily: 'Tajawal, sans-serif',fontWeight: 'bold'}}> الإسم الأخير </span>}
                 value={formData.lastName}
                 onChange={handleChange}
                 InputProps={{
@@ -72,7 +72,7 @@ const Test = () => {
             <TextField
                 margin="normal"
                 name="phone"
-                label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>رقم الهاتف  </span>}
+                label={<span style={{ fontFamily: 'Tajawal, sans-serif',fontWeight: 'bold'}}>رقم الهاتف  </span>}
                 value={formData.phone}
                 onChange={handleChange}
                 InputProps={{
@@ -85,7 +85,7 @@ const Test = () => {
             <TextField
                 margin="normal"
                 name="dob"
-                label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}>تاريخ الميلاد  </span>}
+                label={<span style={{ fontFamily: 'Tajawal, sans-serif',fontWeight: 'bold'}}>تاريخ الميلاد  </span>}
                 type="date"
                 value={formData.dob}
                 onChange={handleChange}
@@ -94,12 +94,12 @@ const Test = () => {
                         <EventIcon />
                     ),
                 }}
-                style={{ width: '50%', fontFamily: 'Tajawal, sans-serif' }} 
+                style={{ width: '50%', fontFamily: 'Tajawal, sans-serif' ,fontWeight: 'bold'}} 
             />
             <TextField
                 margin="normal"
                 name="city"
-                label={<span style={{ fontFamily: 'Tajawal, sans-serif'}}> المدينة </span>}
+                label={<span style={{ fontFamily: 'Tajawal, sans-serif',fontWeight: 'bold'}}> المدينة </span>}
                 value={formData.city}
                 onChange={handleChange}
                 InputProps={{

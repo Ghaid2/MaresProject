@@ -29,7 +29,8 @@ import LockIcon from "@mui/icons-material/Lock";
 
 import Switch from "@mui/material/Switch";
 import { useState } from "react"
-
+import CompanyHome from './pages/forms/Company/CompanyHome/CompanyHome';
+import CreateOpportunity from './pages/forms/Company/CreateOpportunity';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -54,6 +55,8 @@ function App() {
 <Route path="/Test" element={<Test/>} />
 <Route path="/Profile" element={<Profile/>} />
 <Route path="/Resume" element={<Resume/>} />
+<Route path="/CompanyHome" element={<CompanyHome/>} />
+<Route path="/CreateOpportunity" element={<CreateOpportunity/>} />
 
 
 

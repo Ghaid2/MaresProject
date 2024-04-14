@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer style={styles}>
       <div >
-      <span>جميع الحقوق محفوظة لشركة مارس التقنيه 2024</span>
+      <span style={{  marginRight: "500px"}}>جميع الحقوق محفوظة لشركة مارس التقنيه 2024</span>
       </div>
       <div className="followus">
         <a href="#" className="bi bi-facebook "></a>
@@ -25,6 +25,7 @@ const styles = {
   alignItems: "center",
   height: "50px",
   padding: "40px", // Added padding for spacing between icons and text
+
 };
 
 export default Footer;

@@ -1,17 +1,19 @@
+import React from 'react';
 
-const S_Navbar = () => {
-    return ( 
-        <nav>
-            <div >
-                <ul className="nav-links">
-                <li className=" navlink">الفرص التدريبية</li>
-                <li className=" navlink">التدريب الالكتروني</li>
-                </ul>
-              
 
-            </div>
+const SNavbar = ({ toggle, setToggle }) => {
+
+    return (
+  
+        <nav >
+          <ul className="Snav-links">
+          <li onClick={() => setToggle(false)}  className="Snav-link">الفرص التدريبية </li>
+          <li  onClick={() => setToggle(false)} className="Snav-link"> التدريب الإلكتروني</li>
+             
+          </ul>
+  
         </nav>
-     );
-}
+    );
+  };
  
-export default S_Navbar;
+export default SNavbar;

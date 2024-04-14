@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './StudentHeader.css';
 import S_HeaderLeft from './S_HeaderLeft';
 import S_HeaderRight from './S_HeaderRight';
 import S_Navbar from './S_Navbar';
 
-
 const StudentHeader = () => {
-  return (
- <div className="header">
- < S_HeaderLeft />
- < S_Navbar/>
-  < S_HeaderRight/>
+  // Define toggle and setToggle using useState
+  const [toggle, setToggle] = useState(false);
 
- </div>
+  return (
+    <div className="header">
+      {/* Pass toggle and setToggle as props to S_Navbar */}
+      <S_Navbar toggle={toggle} setToggle={setToggle} />
+      <S_HeaderLeft />
+    </div>
   );
 };
 
 export default StudentHeader;
+

@@ -8,8 +8,9 @@ const S_HeroSection = () => {
         
       
        
-          <h1 className="title">   اكتشف عالم الفرص مع <span style={{ color: 'mediumaquamarine' }}>مارِس</span> </h1>
-<h2> مكانك لبناء مستقبلك وتحقيق أحلامك</h2>
+          <h1 className="title">   اكتشف عالم الفرص مع <span style={{ color: 'mediumaquamarine' }}>مارِس</span> 
+          </h1>
+          <h2> مكانك لبناء مستقبلك وتحقيق أحلامك</h2>
 
 
 
