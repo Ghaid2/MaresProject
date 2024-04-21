@@ -6,9 +6,7 @@ import Home from "./pages/home/Home";
 
 
 import Student from "./pages/forms/Student/Student";
-import Company from "./pages/forms/Company/Company";
-import CompanySignin from "./pages/forms/Company/CompanySignin";
-import CompanySignup from "./pages/forms/Company/CompanySignup";
+
 import StudentSignup from "./pages/forms/Student/StudentSignup";
 import StudentSignin from "./pages/forms/Student/StudentSignin";
 import ResetPassword from "./pages/forms/ResetPassword/ResetPassword"
@@ -19,7 +17,11 @@ import StudentHome from "./pages/forms/Student/StudentHome/StudentHome";
 import Test from "./pages/forms/Student/StudentHome/Test";
 import Profile from "./pages/forms/Student/StudentProfile/Profile";
 import Resume from "./pages/forms/Student/StudentProfile/Resume";
-
+//Company 
+import Company from "./pages/forms/Company/Company";
+import CompanySignin from "./pages/forms/Company/CompanySignin";
+import CompanySignup from "./pages/forms/Company/CompanySignup";
+import ViewCompanyProfile from "./pages/forms/Company/ViewCompanyProfile";
 ////////////////
 // Material UI imports
 import Chip from "@mui/material/Chip";
@@ -31,7 +33,7 @@ import Switch from "@mui/material/Switch";
 import { useState } from "react"
 import CompanyHome from './pages/forms/Company/CompanyHome/CompanyHome';
 import CreateOpportunity from './pages/forms/Company/CreateOpportunity';
-
+import Cinfo from './pages/forms/Company/Cinfo';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   <HeroSection/>
@@ -57,7 +59,8 @@ function App() {
 <Route path="/Resume" element={<Resume/>} />
 <Route path="/CompanyHome" element={<CompanyHome/>} />
 <Route path="/CreateOpportunity" element={<CreateOpportunity/>} />
-
+<Route path="/Cinfo" element={<Cinfo/>} />
+<Route path="/ViewCompanyProfile" element={<ViewCompanyProfile/>} />
 
 
 

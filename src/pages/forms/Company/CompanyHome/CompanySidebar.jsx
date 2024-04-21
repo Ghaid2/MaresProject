@@ -48,11 +48,16 @@ function ResponsiveDrawer(props) {
   };
 
   const ClickHandler = () =>{
-    Navigate('../Profile')
+    Navigate('../Cinfo')
   }
 
   const ClickHandleResume = () =>{
     Navigate('../Resume')
+  }
+
+  
+  const ClickHandleViewCompanyProfile = () =>{
+    Navigate('../ViewCompanyProfile')
   }
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -66,7 +71,7 @@ function ResponsiveDrawer(props) {
         </Typography>
 
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={ClickHandleViewCompanyProfile}>
             <ListItemIcon>
               <VisibilityIcon />
             </ListItemIcon>
