@@ -10,7 +10,7 @@ import CompanySidebar from './CompanyHome/CompanySidebar'
 const CProfile = () => {
     return ( <div>
             <CompanyHeader/>  
-           
+
              <CompanySidebar/>
 <Cinfo />
     </div> );

@@ -56,6 +56,10 @@ function ResponsiveDrawer(props) {
     Navigate('../Resume')
   }
 
+  const ClickHandleViewRequests= () =>{
+    Navigate('../ViewRequests')
+  }
+
   const container = window !== undefined ? () => window().document.body : undefined;
 
   const drawer = (
@@ -95,7 +99,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={ClickHandleViewRequests}>
             <ListItemIcon>
               <SchoolIcon />
             </ListItemIcon>

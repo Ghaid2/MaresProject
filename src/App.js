@@ -17,6 +17,7 @@ import StudentHome from "./pages/forms/Student/StudentHome/StudentHome";
 import Test from "./pages/forms/Student/StudentHome/Test";
 import Profile from "./pages/forms/Student/StudentProfile/Profile";
 import Resume from "./pages/forms/Student/StudentProfile/Resume";
+
 //Company 
 import Company from "./pages/forms/Company/Company";
 import CompanySignin from "./pages/forms/Company/CompanySignin";
@@ -34,6 +35,9 @@ import { useState } from "react"
 import CompanyHome from './pages/forms/Company/CompanyHome/CompanyHome';
 import CreateOpportunity from './pages/forms/Company/CreateOpportunity';
 import Cinfo from './pages/forms/Company/Cinfo';
+import DispalyOpportunities from './pages/forms/Student/DispalyOpportunities';
+import ManageRequests from './pages/forms/Company/ManageRequests';
+import ViewRequests from './pages/forms/Student/ViewRequests';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   <HeroSection/>
@@ -61,6 +65,13 @@ function App() {
 <Route path="/CreateOpportunity" element={<CreateOpportunity/>} />
 <Route path="/Cinfo" element={<Cinfo/>} />
 <Route path="/ViewCompanyProfile" element={<ViewCompanyProfile/>} />
+<Route path="/DispalyOpportunities" element={<DispalyOpportunities/>} />
+<Route path="/ManageRequests" element={<ManageRequests/>} />
+<Route path="/ViewRequests" element={<ViewRequests/>} />
+
+
+
+
 
 
 

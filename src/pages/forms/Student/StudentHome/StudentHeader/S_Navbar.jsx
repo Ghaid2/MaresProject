@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 
 const SNavbar = ({ toggle, setToggle }) => {
@@ -7,7 +8,10 @@ const SNavbar = ({ toggle, setToggle }) => {
   
         <nav >
           <ul className="Snav-links">
-          <li onClick={() => setToggle(false)}  className="Snav-link">الفرص التدريبية </li>
+            <Link  to="../DispalyOpportunities">
+            <li   className="Snav-link">الفرص التدريبية </li>
+
+            </Link>
           <li  onClick={() => setToggle(false)} className="Snav-link"> التدريب الإلكتروني</li>
              
           </ul>
@@ -17,3 +21,4 @@ const SNavbar = ({ toggle, setToggle }) => {
   };
  
 export default SNavbar;
+
