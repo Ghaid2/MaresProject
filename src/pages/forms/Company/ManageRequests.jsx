@@ -6,8 +6,6 @@ const ManageRequests = () => {
         <div>
             <CompanyHeader />
 
-            <CompanySidebar />
-
         </div>
     );
 };

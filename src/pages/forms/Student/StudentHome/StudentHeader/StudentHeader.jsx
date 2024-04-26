@@ -11,6 +11,7 @@ const StudentHeader = () => {
 
   return (
     <div className="header">
+      <S_HeaderRight/>
       {/* Pass toggle and setToggle as props to S_Navbar */}
       <S_Navbar toggle={toggle} setToggle={setToggle} />
       <S_HeaderLeft />

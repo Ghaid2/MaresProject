@@ -53,11 +53,6 @@ const Cinfo = () => {
     return (
      <div>
            <CompanyHeader/>  
-             <CompanySidebar/>
-
-
-
-        
              <Grid container direction="column" justifyContent="flex-start" alignItems="center" style={{ height: '100vh' }}>
 
              <h2 style={{ fontFamily: 'Tajawal, sans-serif' }}>معلومات الشركة </h2>

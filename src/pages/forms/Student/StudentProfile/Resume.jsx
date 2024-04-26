@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import StudentHeader from '../StudentHome/StudentHeader/StudentHeader';
-import Sidebar from '../StudentHome/Sidebar';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -154,7 +153,6 @@ useEffect(() => {
     return (
         <div style={{ height: '100vh', overflow: 'auto' }}>
             <StudentHeader />
-            <Sidebar />
             <Grid container direction="column" justifyContent="flex-start" alignItems="center" style={{ minHeight: '100%' }}>
                 <h3 style={{ fontFamily: 'Tajawal, sans-serif', marginBottom: '20px' ,marginTop:'20px'}}>سيرتي الذاتية</h3>
                 <h4 style={{marginBottom:'20px'}}>ملخص عني:</h4>

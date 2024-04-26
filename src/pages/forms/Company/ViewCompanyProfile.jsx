@@ -8,7 +8,7 @@ const viewcompanyprofile = () => {
     return (
         <div>
              <CompanyHeader/>  
-             <CompanySidebar/>
+           
 
         </div>
     );

@@ -1,18 +1,16 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DescriptionIcon from '@mui/icons-material/Description';
 import SchoolIcon from '@mui/icons-material/School'; 
@@ -25,28 +23,15 @@ import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import Box from '@mui/material/Box';
+
+
 const drawerWidth = 240;
 
-function ResponsiveDrawer(props) {
+function PersistentDrawer(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [isClosing, setIsClosing] = React.useState(false);
-  const Navigate= useNavigate();
-
-  const handleDrawerClose = () => {
-    setIsClosing(true);
-    setMobileOpen(false);
-  };
-
-  const handleDrawerTransitionEnd = () => {
-    setIsClosing(false);
-  };
-
-  const handleDrawerToggle = () => {
-    if (!isClosing) {
-      setMobileOpen(!mobileOpen);
-    }
-  };
+  const Navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
 
   const ClickHandler = () =>{
     Navigate('../Profile')
@@ -59,8 +44,6 @@ function ResponsiveDrawer(props) {
   const ClickHandleViewRequests= () =>{
     Navigate('../ViewRequests')
   }
-
-  const container = window !== undefined ? () => window().document.body : undefined;
 
   const drawer = (
     <div>
@@ -75,7 +58,7 @@ function ResponsiveDrawer(props) {
             <ListItemIcon>
               <VisibilityIcon />
             </ListItemIcon>
-            <ListItemText sx={{ textAlign:"start" }} primary="مشاهدة الملف الشخصي"      />
+            <ListItemText sx={{ textAlign:"start" }} primary="مشاهدة الملف الشخصي" />
           </ListItemButton>
         </ListItem>
 
@@ -87,7 +70,6 @@ function ResponsiveDrawer(props) {
             <ListItemText sx={{ textAlign:"start" }} primary="المعلومات الشخصية" />
           </ListItemButton>
         </ListItem>
-
 
         <ListItem disablePadding>
           <ListItemButton onClick={ClickHandleResume}>
@@ -126,19 +108,17 @@ function ResponsiveDrawer(props) {
         </ListItem>
 
         <ListItem disablePadding>
-  <ListItemButton>
-    <ListItemIcon>
-      <ExitToAppOutlinedIcon />
-    </ListItemIcon>
-    <ListItemText 
-    sx={{ textAlign:"start" }}
-      primary="تسجيل الخروج" 
-      style={{fontFamily: 'Tajawal'}}
-    />
-  </ListItemButton>
-</ListItem>
-
-
+          <ListItemButton>
+            <ListItemIcon>
+              <ExitToAppOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText 
+            sx={{ textAlign:"start" }}
+            primary="تسجيل الخروج" 
+            style={{fontFamily: 'Tajawal'}}
+            />
+          </ListItemButton>
+        </ListItem>
       </List>
     </div>
   );
@@ -146,37 +126,41 @@ function ResponsiveDrawer(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
+      <Toolbar />
+      <IconButton
+        color="inherit"
+        aria-label="open drawer"
+        onClick={() => setOpen(!open)}
+        edge="start"
+        sx={{ mr: 2, ...(open && { display: 'none' }) }}
       >
-       
-        <Drawer
-       anchor='right'
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { 
-              boxSizing: 'border-box', 
-              width: drawerWidth,
-              backgroundColor: '#efefef', // تغيير لون الشريط هنا
-              fontFamily: 'Tajawal, sans-serif', 
-            },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
-      </Box>
+        <MenuIcon />
+      </IconButton>
+      <Drawer
+        variant="persistent"
+        anchor="right"
+        open={open}
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+            backgroundColor: '#efefef', // Change the drawer background color here
+            fontFamily: 'Tajawal, sans-serif', 
+          },
+        }}
+      >
+        {drawer}
+      </Drawer>
     </Box>
   );
 }
 
-ResponsiveDrawer.propTypes = {
+PersistentDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default ResponsiveDrawer;
+export default PersistentDrawer;
+
 

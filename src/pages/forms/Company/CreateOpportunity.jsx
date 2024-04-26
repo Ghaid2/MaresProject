@@ -111,7 +111,7 @@ const TrainingOpportunity = () => {
     return (
         <div>
             <CompanyHeader />
-            <CompanySidebar />
+    
             <Grid container direction="column" justifyContent="center" alignItems="center">
                 <h1 style={{ marginTop: '20px' }}>إنشاء فرصة تدريبية</h1>
                 <h3 style={{ marginBottom: '20px' }}>مجال التدريب:</h3>

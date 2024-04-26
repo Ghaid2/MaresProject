@@ -12,9 +12,10 @@ import { Box } from '@mui/material';
 const StudentHome = () => {
   return (
     <div >
-        <Sidebar />
+      
       <StudentHeader />
       < S_HeroSection />
+    
     
       <br></br>
       <br></br>
