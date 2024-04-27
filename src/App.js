@@ -39,6 +39,8 @@ import DispalyOpportunities from './pages/forms/Student/DispalyOpportunities';
 import ManageRequests from './pages/forms/Company/ManageRequests';
 import ViewRequests from './pages/forms/Student/ViewRequests';
 import SelectStudent from './pages/forms/Company/SelectStudent';
+import AcceptedStudent from './pages/forms/Company/AcceptedStudent';
+import CommentBox from './pages/forms/Student/CommentBox';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   <HeroSection/>
@@ -70,6 +72,10 @@ function App() {
 <Route path="/ManageRequests" element={<ManageRequests/>} />
 <Route path="/ViewRequests" element={<ViewRequests/>} />
 <Route path="/SelectStudent" element={<SelectStudent/>} />
+<Route path="/AcceptedStudent" element={<AcceptedStudent/>} />
+
+<Route path="/CommentBox" element={<CommentBox/>} />
+
 
 
 

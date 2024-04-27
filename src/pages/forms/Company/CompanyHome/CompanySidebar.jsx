@@ -37,8 +37,8 @@ function ResponsiveDrawer(props) {
     Navigate('../Cinfo')
   }
 
-  const ClickHandleResume = () =>{
-    Navigate('../Resume')
+  const ClickHandleManageRequests = () =>{
+    Navigate('/ManageRequests')
   }
 
   
@@ -78,7 +78,7 @@ function ResponsiveDrawer(props) {
 
 
         <ListItem disablePadding>
-          <ListItemButton onClick={ClickHandleResume}>
+          <ListItemButton onClick={ClickHandleManageRequests}>
             <ListItemIcon>
               <DescriptionIcon />
             </ListItemIcon>

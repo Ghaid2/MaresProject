@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from './StudentHome/Sidebar';
 import StudentHeader from './StudentHome/StudentHeader/StudentHeader';
+import Search from './Search'
 import { Box, Typography, Grid, Card, CardContent, CardActions, CardMedia, Button } from '@mui/material';
 
 function OpportunityCard({ OpportunityID, OpportunityName, TrainingType, TrainingDuration, City, imageURL }) {
@@ -49,17 +50,16 @@ const DispalyOpportunities = () => {
     <div>
 
 
-      <StudentHeader />
-      <Sidebar />
-<Typography style={{ fontFamily: 'Tajawal, sans-serif' }}>
+      <StudentHeader/>
+      <Search/>
+
+<Typography style={{ fontFamily: 'Tajawal, sans-serif' ,fontWeight:'bold' }}>
     الفرص التدريبية:
 </Typography>
 
      
       <Grid container spacing={2} sx={{ width: '80%', margin: 'auto', marginTop: '20px' ,   marginRight: '300px' , marginLeft: '500px'}}>
-      <Typography style={{ fontFamily: 'Tajawal, sans-serif',fontWeight:'bold', fontSize: '24px'  }}>
-    الفرص التدريبية:
-</Typography>
+    
 <br></br>
 <br></br>
 
