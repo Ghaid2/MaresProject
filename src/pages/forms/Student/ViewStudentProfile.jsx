@@ -1,39 +1,37 @@
 import React from 'react';
-import CompanyHeader from './CompanyHome/CompanyHeader/CompanyHeader';
-import CompanySidebar from './CompanyHome/CompanySidebar';
-
+import StudentHeader from './StudentHome/StudentHeader/StudentHeader';
 import { Box, Typography,  Card, CardContent } from '@mui/material';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
-import ChatIcon from '@mui/icons-material/Chat';
-import PublishIcon from '@mui/icons-material/Publish';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
  
-function  viewCard({ CompanyName, DescriptionCompany, SocialMedia, Comments ,image }) {
+
+function  viewCard({ FirstName, LastName, Discription, Experiences, Skills ,image }) {
   return (
    
     <Card style={{ fontFamily: 'Tajawal, sans-serif' , display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
        
-
 
       <div style={{ flex: 1, textAlign: 'left', padding: '1rem' }}>
         <Box style={{ flex: 1, textAlign: 'center', padding: '1rem' ,margin: '10px' }}>
         <img src={image} alt="Profile" style={{ width: '100px', height: '100px', borderRadius: '50%' }} />
 
         <Typography variant="h5" gutterBottom style={{ fontFamily: 'Tajawal, sans-serif' }} >
-         اسم الشركة {CompanyName}
+          {FirstName} {LastName}
         </Typography>
         </Box>
 
-        <Box style={{ flex: 1, textAlign: 'center', padding: '1rem', border: '3px solid #ccc' , margin: '50px'  }}>
+        <Box style={{ flex: 1, textAlign: 'center', padding: '1rem' }}>
         <Typography variant="h5" gutterBottom style={{ fontFamily: 'Tajawal, sans-serif' }}>
-         عدد التدريبات التي تم نشرها  
-          <br></br>
-         0
+         الطلبات التي تم إنشائها
+         0 
         </Typography>
         </Box>
 
-        <Box style={{ flex: 1, textAlign: 'center', padding: '1rem', border: '3px solid #ccc' , margin: '50px'  }}>
+        <Box style={{ flex: 1, textAlign: 'center', padding: '1rem' }}>
         <Typography variant="h5" gutterBottom style={{ fontFamily: 'Tajawal, sans-serif' }}>
-        وسائل التواصل الإجتماعي{SocialMedia}
+        التدريبات المنتهية
+        0
         </Typography>
         </Box>
 
@@ -44,22 +42,23 @@ function  viewCard({ CompanyName, DescriptionCompany, SocialMedia, Comments ,ima
         <CardContent>
         <Box style={{ flex: 1, textAlign: 'center', padding: '1rem' , border: '3px solid #ccc' , margin: '50px' }}>
           <Typography variant="h6" gutterBottom style={{ fontFamily: 'Tajawal, sans-serif' }}>
-          <ContactPageIcon color="disabled" style={{ marginLeft: '400px',fontSize: 50 }} />
-            <strong>تعريف بالشركة:</strong> {DescriptionCompany}
+          <ContactPageIcon color="disabled" style={{ fontSize: 50 }} />
+            <strong>الوصف:</strong> {Discription}
+          </Typography>
+          </Box>
+
+          <Box style={{ flex: 1, textAlign: 'center', padding: '1rem', border: '3px solid #ccc',  margin: '50px' }}>
+          <Typography variant="h6" gutterBottom style={{ fontFamily: 'Tajawal, sans-serif' }}>
+          <AssessmentIcon color="disabled" style={{ marginLeft: '400px',fontSize: 50 }} />
+            <strong>الخبرات:</strong>
+             {Experiences}
           </Typography>
           </Box>
 
           <Box style={{ flex: 1, textAlign: 'center', padding: '1rem' , border: '3px solid #ccc', margin: '50px'}} >
           <Typography variant="h6" gutterBottom style={{ fontFamily: 'Tajawal, sans-serif' }}>
-          <PublishIcon color="disabled" style={{ marginLeft: '400px',fontSize: 50 }} />
-            <strong>العروض التدربية التي تم نشرها:</strong>
-          </Typography>
-          </Box>
-
-          <Box style={{ flex: 1, textAlign: 'center', padding: '1rem' , border: '3px solid #ccc', margin: '50px'}} >
-          <Typography variant="h6" gutterBottom style={{ fontFamily: 'Tajawal, sans-serif' }}>
-          <ChatIcon color="disabled" style={{ marginLeft: '400px',fontSize: 50 }} />
-            <strong>التعليقات:</strong> {Comments}
+          <MenuBookIcon color="disabled" style={{ marginLeft: '400px',fontSize: 50 }} />
+            <strong>المهارات:</strong> {Skills}
           </Typography>
           </Box>
 
@@ -73,19 +72,17 @@ function  viewCard({ CompanyName, DescriptionCompany, SocialMedia, Comments ,ima
 
 
 
-export default function ViewCompanyProfile() {
+export default function ViewStudentProfile() {
   
   const view = [
-    { CompanyName : '', 
-    SocialMedia:'',
-    DescriptionCompany: '..................................', 
-
-    Comments: '..........' }
+    { FirstName: 'منار', LastName: 'الخطابي', image: '' ,
+    
+    Discription: '..................................', Experiences: '..............................', Skills: '..........' }
 ]
 
   return ( 
 <div>
-<CompanyHeader/>  
+  <StudentHeader />
   <Box
       sx={{
         width: '80%',
@@ -96,12 +93,11 @@ export default function ViewCompanyProfile() {
         margin : '100px'
       }}
     >
-     <Typography variant="h6" gutterBottom style={{ fontFamily: 'Tajawal, sans-serif' }}>
-            <strong>ملف الشركة</strong> 
-          </Typography>    
-          
+      <Typography variant="h6" gutterBottom style={{ fontFamily: 'Tajawal, sans-serif' }}>
+            <strong>الملف الشخصي</strong> 
+          </Typography>   
   {view.map((v)=>{
-   
+  
       return  viewCard(v)
   }) }
     </Box>
@@ -109,3 +105,6 @@ export default function ViewCompanyProfile() {
 </div> 
 );
 }
+
+
+

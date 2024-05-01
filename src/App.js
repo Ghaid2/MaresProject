@@ -22,7 +22,6 @@ import Resume from "./pages/forms/Student/StudentProfile/Resume";
 import Company from "./pages/forms/Company/Company";
 import CompanySignin from "./pages/forms/Company/CompanySignin";
 import CompanySignup from "./pages/forms/Company/CompanySignup";
-import ViewCompanyProfile from "./pages/forms/Company/ViewCompanyProfile";
 ////////////////
 // Material UI imports
 import Chip from "@mui/material/Chip";
@@ -41,6 +40,12 @@ import ViewRequests from './pages/forms/Student/ViewRequests';
 import SelectStudent from './pages/forms/Company/SelectStudent';
 import AcceptedStudent from './pages/forms/Company/AcceptedStudent';
 import CommentBox from './pages/forms/Student/CommentBox';
+import DisplayPublished from './pages/forms/Company/DisplayPublished';
+import DisplayUnavailable from './pages/forms/Company/DisplayUnavailable';
+import DisplayCompleted from './pages/forms/Company/DisplayCompleted';
+import ViewCompanyProfile from './pages/forms/Company/ViewCompanyProfile';
+import ViewStudentProfile from './pages/forms/Student/ViewStudentProfile';
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   <HeroSection/>
@@ -67,12 +72,16 @@ function App() {
 <Route path="/CompanyHome" element={<CompanyHome/>} />
 <Route path="/CreateOpportunity" element={<CreateOpportunity/>} />
 <Route path="/Cinfo" element={<Cinfo/>} />
-<Route path="/ViewCompanyProfile" element={<ViewCompanyProfile/>} />
 <Route path="/DispalyOpportunities" element={<DispalyOpportunities/>} />
 <Route path="/ManageRequests" element={<ManageRequests/>} />
 <Route path="/ViewRequests" element={<ViewRequests/>} />
 <Route path="/SelectStudent" element={<SelectStudent/>} />
 <Route path="/AcceptedStudent" element={<AcceptedStudent/>} />
+<Route path="/DisplayPublished" element={<DisplayPublished/>} />
+<Route path="/DisplayUnavailable" element={<DisplayUnavailable/>} />
+<Route path="/DisplayCompleted" element={<DisplayCompleted/>} />
+<Route path="/ViewCompanyProfile" element={<ViewCompanyProfile/>} />
+<Route path="/ViewStudentProfile" element={<ViewStudentProfile/>} />
 
 <Route path="/CommentBox" element={<CommentBox/>} />
 
